@@ -10,6 +10,11 @@ public class LeetCode25Test {
         head.next = new ListNode(1);
         ListNode tail = new ListNode(3);
         head.next.next = tail;
-        LeetCode25ReverseKNodes.reverse(head, tail);
+        var node = LeetCode25ReverseKNodes.reverseList(head, tail);
+        var n = node[0];
+        while (n != null) {
+            System.out.println(n.val);
+            n = n.next;
+        }
     }
 }
