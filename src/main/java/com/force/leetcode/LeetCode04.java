@@ -9,7 +9,7 @@ package com.force.leetcode;
  * 输出：2.00000
  * 解释：合并数组 = [1,2,3] ，中位数 2
  */
-public class LeetCode4 {
+public class LeetCode04 {
 
     public static double findMedianSortedArrays(int[] a1, int[] a2) {
         int total = a1.length + a2.length;

@@ -8,7 +8,7 @@ public class LeetCode29Divide {
         long result = 0;
         while (s >= d) {
             long m = d;
-            int n = 1;
+            long n = 1;
             while (s >= (m << 1)) {
                 m <<= 1;
                 n <<= 1;
