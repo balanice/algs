@@ -2,39 +2,18 @@ package com.force.leetcode;
 
 public class LeetCode10Regex {
 
+    // 参考： https://www.cnblogs.com/grandyang/p/4461713.html
     public boolean isMatch(String s, String p) {
-        int i = s.length() - 1, j = p.length() - 1;
-        while (i < s.length() && j < p.length()) {
-            if (s.charAt(i) == p.charAt(j)) {
-                i--;
-                j--;
-                continue;
-            } else {
-                if (p.charAt(j) == '.') {
-                    i--;
-                    j--;
-                    continue;
-                }
-
-                if (p.charAt(j) == '*') {
-                    if (p.charAt(j - 1) == '.') {
-                        j++;
-                        i = s.length();
-                        continue;
-                    }
-                    while (i < s.length() && p.charAt(j - 1) == s.charAt(i)) {
-                        i++;
-                    }
-                    j++;
-                    continue;
-                }
-                if (j + 1 < p.length() && p.charAt(j + 1) == '*') {
-                    j += 2;
-                    continue;
-                }
-                return false;
-            }
+        if (p.isEmpty())
+            return s.isEmpty();
+        if (p.length() > 1 && p.charAt(1) == '*') {
+            System.out.println(p + " " + s);
+            return isMatch(s, p.substring(2))
+                    || (!s.isEmpty() && (s.charAt(0) == p.charAt(0) || p.charAt(0) == '.')
+                            && isMatch(s.substring(1), p));
+        } else {
+            return !s.isEmpty() && (s.charAt(0) == p.charAt(0)
+                    || p.charAt(0) == '.') && isMatch(s.substring(1), p.substring(1));
         }
-        return (i >= s.length() && j >= p.length());
     }
 }
