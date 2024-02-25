@@ -3,8 +3,8 @@ package com.force.graph;
 import edu.princeton.cs.algs4.Graph;
 
 /**
- * 能够用两种颜色将图的所有顶点着色，使得任意一条边两端的顶点颜色都不相同，这个问题也等价于：这是一个二分图吗
- * 
+ * 能够用两种颜色将图的所有顶点着色，使得任意一条边两端的顶点颜色都不相同，
+ * 这个问题也等价于：这是一个二分图吗
  */
 public class TwoColor {
 
