@@ -19,7 +19,7 @@ public class Circle {
         }
     }
 
-    public void dfs(Graph g, int v, int u) {
+    private void dfs(Graph g, int v, int u) {
         marked[v] = true;
         for (int i : g.adj(v)) {
             if (!marked[i]) {
